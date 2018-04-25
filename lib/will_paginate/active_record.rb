@@ -157,12 +157,12 @@ module WillPaginate
           raise ArgumentError, "unsupported parameters: %p" % options.keys
         end
 
-        rel = limit(per_page.to_i).page(pagenum)
+        rel = limit(per_page.to_i).page2(pagenum)
         rel.total_entries = total.to_i          unless total.blank?
         rel
       end
 
-      def page(num)
+      def page2(num)
         rel = if ::ActiveRecord::Relation === self
           self
         elsif !defined?(::ActiveRecord::Scoping) or ::ActiveRecord::Scoping::ClassMethods.method_defined? :with_scope

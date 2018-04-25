@@ -7,3 +7,4 @@ coverage
 vendor/bundle
 tags
 .ruby-version
+.idea/*

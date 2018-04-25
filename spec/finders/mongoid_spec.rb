@@ -31,12 +31,12 @@ describe WillPaginate::Mongoid do
   describe "#page" do
     it "should forward to the paginate method" do
       criteria.expects(:paginate).with(:page => 2).returns("itself")
-      criteria.page(2).should == "itself"
+      criteria.page2(2).should == "itself"
     end
 
     it "should not override per_page if set earlier in the chain" do
-      criteria.paginate(:per_page => 10).page(1).per_page.should == 10
-      criteria.paginate(:per_page => 20).page(1).per_page.should == 20
+      criteria.paginate(:per_page => 10).page2(1).per_page.should == 10
+      criteria.paginate(:per_page => 20).page2(1).per_page.should == 20
     end
   end
 
@@ -65,7 +65,7 @@ describe WillPaginate::Mongoid do
     end
 
     it "should not override page number if set earlier in the chain" do
-      criteria.page(3).paginate.current_page.should == 3
+      criteria.page2(3).paginate.current_page.should == 3
     end
 
     it "should limit according to per_page parameter" do

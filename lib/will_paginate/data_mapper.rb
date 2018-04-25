@@ -7,7 +7,7 @@ require 'will_paginate/collection'
 module WillPaginate
   module DataMapper
     module Pagination
-      def page(num)
+      def page2(num)
         pagenum = ::WillPaginate::PageNumber(num.nil? ? 1 : num)
         per_page = query.limit || self.per_page
         options = {:offset => pagenum.to_offset(per_page).to_i}

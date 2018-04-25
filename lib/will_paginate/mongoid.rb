@@ -20,7 +20,7 @@ module WillPaginate
         end
       end
 
-      def page(page)
+      def page2(page)
         paginate(:page => page)
       end
     end
